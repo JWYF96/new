@@ -10,6 +10,10 @@ def hello_world():
     from selenium.webdriver.common.by import By
     from selenium.webdriver.chrome.options import Options
 
+    # set window size
+    webdriver.set_window_size(2560, 1600)
+
+
     chrome_options = Options()
     chrome_options.add_argument('--headless')
 
