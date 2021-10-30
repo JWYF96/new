@@ -5,7 +5,6 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     from selenium import webdriver
-    from selenium.webdriver.chrome.options import Options
     from selenium.webdriver.chrome.service import Service
     from webdriver_manager.chrome import ChromeDriverManager
     from selenium.webdriver.common.by import By
@@ -15,7 +14,7 @@ def hello_world():
     chrome_options.add_argument('--headless')
 
     s = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=s)
+    driver = webdriver.Chrome(service=s, options =chrome_options)
     driver.get("https://www.ikea.com.hk/zh")
 
     elem = driver.find_element(By.CSS_SELECTOR, "#header_searcher_desktop_input")
