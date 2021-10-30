@@ -10,8 +10,7 @@ def hello_world():
     from selenium.webdriver.common.by import By
     from selenium.webdriver.chrome.options import Options
 
-    # set window size
-    webdriver.set_window_size(2560, 1600)
+
 
 
     chrome_options = Options()
@@ -19,6 +18,7 @@ def hello_world():
 
     s = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=s, options =chrome_options)
+    driver.set_window_size(2560, 1600)
     driver.get("https://www.ikea.com.hk/zh")
 
     elem = driver.find_element(By.CSS_SELECTOR, "#header_searcher_desktop_input")
