@@ -28,9 +28,9 @@ def hello_world():
     import time
     time.sleep(3)
     while True:
-        print("A")
+        
         product_brief_list = driver.find_element(By.CSS_SELECTOR, ".products_list")
-        print("B")
+
         for product_brief in product_brief_list.find_elements(By.CSS_SELECTOR,".col-6.col-md-4.col-lg-3.p-0.itemBlock"):
             title = product_brief.find_element(By.CSS_SELECTOR, ".itemName").text
             detail = product_brief.find_element(By.CSS_SELECTOR, ".itemFacts").text
